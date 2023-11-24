@@ -10,7 +10,7 @@ public class CollectionsSorting {
     public static void main(String[] args) {
 
 
-        // 1st
+        // 1st using Array
 
         ArrayList<Integer> al = new ArrayList<Integer>();
         al.add(205);
