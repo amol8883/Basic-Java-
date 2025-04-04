@@ -1,24 +1,31 @@
-package com.datastructures;
+package com.exceptionHandling;
+
+import com.oracle.xmlns.internal.webservices.jaxws_databinding.SoapBindingParameterStyle;
 
 public class Example {
+
+    int[] numbers = {2,4,6,8,10,12};
+
+
+    void showNumbers(){
+        System.out.println("Length of Array is  "+numbers.length);
+        try {
+            System.out.println(numbers[10]);
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("not valid input");
+        }finally {
+            System.out.println("please select in rang od array value");
+        }
+        for (int a :numbers){
+            System.out.println(a);
+        }
+    }
+
     public static void main(String[] args) {
 
-        String[] str=  {"adada","adade","erere","adada"};
-        String target= "adada";
-        int count = 0;
-        char c='d';
-        //int[] num ={12,45,546,458};
-  //char[] ct={'g','k','u'};
-        for (int i=0; i<str.length;i++){
-           // System.out.println(str[i]);
+        Example ex =new Example();
 
-            for(int j=0;j<str[i].length();j++) {
+        ex.showNumbers();
 
-                if (str[i].charAt(j) == c) {
-                    count++;
-                }
-            }
-        }
-        System.out.println(count);
     }
 }
