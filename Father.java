@@ -1,12 +1,12 @@
-package com.oopsCocepts.Inheritance.Multilevel;
+package com.oopsCocepts.Inheritance.Hierarchical;
 
-public class Father extends GrandFather{
+public class Father {
 
-    String count ;
+    String android;
 
-    public void run_walk(){
-        count="4km";
-        System.out.println("father walk_run in daily "+count );
+    public void modelName(){
+        android ="samsung";
+        System.out.println("First android "+android);
+
     }
-
 }
