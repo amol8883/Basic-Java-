@@ -1,48 +1,24 @@
-package com.array;
-
-import java.util.Arrays;
-
-// Array is reference data type to declare same data type multiple value assign at time
+package com.datastructures;
 
 public class Example {
-// call array inside  static block, methods and constructors
-    // declaration array
-    static int[] arr2 = new int[]{1,2,3,4,5}; // also declare static
-    int[] arr = new int[]{1,2,3,4,5}; // definition
-
-    {
-        System.out.println("block");
-        for(int num :arr) {
-            System.out.println(num);
-        }
-    }
-  public Example() {
-      System.out.println("constructor");
-      for (int num2 : arr) {
-          System.out.println(num2);
-      }
-
-  }
-
-  public int[] getNumbers(){
-
-        return new int[]{11,12,13,14,15};
-  }
-
-  public void getString(String[] str) {
-      for (String st : str) {
-          System.out.println(st);
-      }
-  }
-
     public static void main(String[] args) {
 
-        Example ex = new Example(); // when we create objets,constructor, static and non_static block execute
+        String[] str=  {"adada","adade","erere","adada"};
+        String target= "adada";
+        int count = 0;
+        char c='d';
+        //int[] num ={12,45,546,458};
+  //char[] ct={'g','k','u'};
+        for (int i=0; i<str.length;i++){
+           // System.out.println(str[i]);
 
-        System.out.println(Arrays.toString( ex.getNumbers()));
-        String[] data = new String[]{"aa","bb","cc"};
-        ex.getString(data);
+            for(int j=0;j<str[i].length();j++) {
 
+                if (str[i].charAt(j) == c) {
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
     }
-
 }
