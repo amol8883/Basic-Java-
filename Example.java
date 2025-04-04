@@ -1,69 +1,56 @@
-package com.objectClassMethods;
+package com.string;
 
-import javax.swing.border.EmptyBorder;
+public class Example {
 
-public class Example{
-    private int id;
-    private String name;
+    int a=12345;
+    String st;
 
-    public Example(int id, String name) {
-        this.id = id;
-        this.name = name;
+    {
+       // st = String.valueOf(a);
+       //  st= Integer.toString(a);
+       st =  a +"";
+        StringBuilder sb = new StringBuilder(st).reverse();
+        System.out.println(" reverse int value using String "+ sb);
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String toString(){
-        return "ID "+id+" Name "+name;
-    }
-    @Override
-    public int hashCode(){
-        return id;
-    }
-
-    @Override
-   public boolean equals(Object obj){
-
-     try {
-         Example emp1 = (Example)obj;
-         if (name.equals(emp1.getName()) && id ==emp1.getId())
-             return true;
-         else
-             return false;
-     }catch (Exception ex) {
-         return false;
-     }
-   }
 
 
     public static void main(String[] args) {
-        Example emp1 = new Example(1,"Amol");
-        Example emp2 = new Example(2,"jaypal");
-        Example emp3 = new Example(1,"Amol");
-        Example emp4 = emp1;
-        System.out.println(emp1.toString()); // call toString Method from Object class
 
-        System.out.println(emp1.hashCode()); // Call hashCode Method from Object class
+        Example ex = new Example();
+        System.out.println("reverse int value "+ex.st);
 
-        //   After call Equal() method then compare content of object
-        System.out.println(emp1.equals(emp2)); // reference  comparison false  object ref comparison
-        System.out.println(emp1.equals(emp3)); //  reference comparison false  object ref comparison
-        System.out.println(emp1.equals(emp4));  //  same object reference  then true. object ref comparison
 
-        System.out.println(emp1.getClass().getName()); // find the class name of help of this method
+     int number = 12345;
+     int reverse = 0;
+
+     while (number!=0){
+     int digit = number%10;
+     reverse =reverse*10+digit;
+     number/=10;
+     }
+        System.out.println(reverse);
+
+     String str = "amol";
+     StringBuilder sbl = new StringBuilder(str).reverse();
+     System.out.println(sbl);
+
+     String str2= Integer.toString(number);
+        System.out.println("New String "+str2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
 }
