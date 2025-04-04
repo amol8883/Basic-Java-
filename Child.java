@@ -1,37 +1,37 @@
-package com.oopsCocepts.Encapsulation;
+package com.oopsCocepts.Polymorphism;
 
-public class Child extends GroupOfMechanism {
+public class Child extends Father{
 
- String role;
- double payment;
-
-    public Child(int id, String name, String address, String role, double payment) {
-        super(id, name, address);
-        this.role = role;
-        this.payment = payment;
+    static float percentage;
+    static{
+        percentage = 50.0f;
+        System.out.println("child percentage is "+percentage);
     }
 
-    public Child(int id, String name, String address) {
-        super(id, name, address);
+
+    @Override
+    public void dailyWork(int a, String name) {
+        super.dailyWork(a, name);
+
+        System.out.println("execute child method_1"+ name);
+
+    }
+
+    @Override
+    public void dailyWork(int a, String name, String address) {
+        super.dailyWork(a, name, address);
+        System.out.println("execute child method_2");
+
     }
 
     public static void main(String[] args) {
-        Child ch = new Child(1,"Amol","Kirla");
-        Child ch2 = new Child(1,"amol","pune","java Developer",25000);
-        ch.getId();
-        System.out.println(ch.getId());
-        ch.getName();
-        System.out.println(ch.getName());
-        ch.getAddress();
-        System.out.println(ch.getAddress());
-        System.out.println(ch2.role);
-        System.out.println(ch2.payment);
-        System.out.println(ch2.getId());
-
-
-
+        Child ch1= new Child();
+        ch1.dailyWork(111,"amol","Kirla");
+        ch1.dailyWork(222,"java");
+        System.out.println("*************************");
+        Father fa = new Father();
+        fa.dailyWork(333,"last");
 
     }
-
 
 }
