@@ -1,31 +1,25 @@
-package com.it;
+package basic.testProgram;
 
 public class PrimeNum {
-
     public static void main(String[] args) {
+        int num =1;
+        boolean isPrime = true;
 
-        int num = 12;
-        int result;
-        //int flag = 0;
-        boolean flag =false;
+        if(num<=1){
+            isPrime =false;
 
-        result = num / 2;
-        if (num == 0 || num == 1) {
-            System.out.println(num + " is not prime ");
-        }else
-            for (int i = 2; i <= result; i++) {
-                if (num % 2 == 0) {
-                    System.out.println(num + " is not prime");
-                     flag=true;
-                    //flag = 0;
+        }else{
+            for (int i=2; i<num;i++){
+                if (num%2==0){
+                    isPrime =false;
                     break;
                 }
             }
-            if (!flag) {
-                System.out.println(num + " is prime");
-            }
-
-
-
+        }
+        if (isPrime){
+            System.out.println(num+" is Number prime number");
+        }else {
+            System.out.println(num + " is Number is not prime");
+        }
     }
 }

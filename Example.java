@@ -1,55 +1,25 @@
-package com.string;
+package basic.testProgram;
+
+import javax.security.sasl.SaslClient;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Example {
 
-    int a=12345;
-    String st;
-
-    {
-       // st = String.valueOf(a);
-       //  st= Integer.toString(a);
-       st =  a +"";
-        StringBuilder sb = new StringBuilder(st).reverse();
-        System.out.println(" reverse int value using String "+ sb);
-    }
-
-
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       String str =sc.nextLine(); // input string:  amol bangdge patil
+        String[] words= str.split(" "); // o/p : bandge amol
+        String result="";
+        for (String word : words) {
+            String reverseWord = "";
+            for (int i = word.length()-1; i >= 0; i--) {
 
-        Example ex = new Example();
-        System.out.println("reverse int value "+ex.st);
-
-
-     int number = 12345;
-     int reverse = 0;
-
-     while (number!=0){
-     int digit = number%10;
-     reverse =reverse*10+digit;
-     number/=10;
-     }
-        System.out.println(reverse);
-
-     String str = "amol";
-     StringBuilder sbl = new StringBuilder(str).reverse();
-     System.out.println(sbl);
-
-     String str2= Integer.toString(number);
-        System.out.println("New String "+str2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+             reverseWord =reverseWord+word.charAt(i);
+            }
+            result=reverseWord+" ";
+        }
+        System.out.println(result);
 
     }
 
