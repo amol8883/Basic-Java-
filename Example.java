@@ -1,31 +1,20 @@
-package com.exceptionHandling;
+package com.it;
 
-import com.oracle.xmlns.internal.webservices.jaxws_databinding.SoapBindingParameterStyle;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Example {
 
-    int[] numbers = {2,4,6,8,10,12};
-
-
-    void showNumbers(){
-        System.out.println("Length of Array is  "+numbers.length);
-        try {
-            System.out.println(numbers[10]);
-        }catch (IndexOutOfBoundsException e){
-            System.out.println("not valid input");
-        }finally {
-            System.out.println("please select in rang od array value");
-        }
-        for (int a :numbers){
-            System.out.println(a);
-        }
-    }
-
-    public static void main(String[] args) {
-
-        Example ex =new Example();
-
-        ex.showNumbers();
+    public static void main(String[] args) throws IOException {
+        BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the Integer");
+            int a= Integer.parseInt(br.readLine());
+        System.out.println("Enter the String");
+                String b = br.readLine();
+                System.out.println("integer value is "+a+ " And String is "+b);
 
     }
 }
